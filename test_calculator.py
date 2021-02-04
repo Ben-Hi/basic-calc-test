@@ -43,7 +43,8 @@ class Test_TestCalculator(unittest.TestCase):
         self.assertEqual(calculator.calc_mul(10,1.5), 15)
 
     def test_mul_int_string(self):
-        self.assertEqual(calculator.calc_mul(2,"string"),"stringstring")
+        with self.assertRaises(TypeError):
+            calculator.calc_mul(1, "string")
 
     # Div Method testing
     def test_div_pos(self):
